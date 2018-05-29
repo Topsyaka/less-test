@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
+const watch = require('gulp-watch');
 const path = require('path');
  
 gulp.task('less', function () {
@@ -9,3 +10,8 @@ gulp.task('less', function () {
     }))
     .pipe(gulp.dest('./public/css'));
 });
+
+gulp.task('watch', () => {
+  gulp.watch('./less/**', ['less'])
+});
+
